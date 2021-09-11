@@ -1,0 +1,128 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.typeform_input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid lightgrey;
+  border-radius: 0;
+  outline: none;
+  width: 90%;
+  font-size: 20px;
+  margin: 10px;
+  padding: 10px;
+  box-shadow: none;
+  box-sizing: content-box;
+  transition: all 1s;
+  &:focus {
+    width: 100%;
+    border-bottom: 3px solid #52b6ac;
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-image: url("./assets/images/background-image.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.email-icon {
+  display: flex;
+  margin: 0px auto;
+  height: 150px;
+  width: 150px;
+}
+
+.button-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  position: relative;
+  -webkit-box-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  margin: 0 auto;
+  font-family: inherit;
+  cursor: pointer;
+  font-weight: 700;
+  transition-duration: 0.1s;
+  transition-property: background-color, color, border-color, opacity,
+    box-shadow;
+  transition-timing-function: ease-out;
+  outline: none;
+  border: 1px solid transparent;
+  margin: 0px;
+  box-shadow: rgb(0 0 0 / 10%) 0px 3px 12px 0px;
+  padding: 10px 20px;
+  min-height: 48px;
+  background-color: rgb(2, 53, 100);
+  color: rgb(230, 243, 255);
+  border-radius: 4px;
+}
+
+.button:hover {
+  background-color: rgb(2, 53, 100);
+  opacity: 0.7;
+}
+
+.flex-wrapper {
+  width: 100%;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.press-enter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto;
+}
+
+.text-start {
+  margin: 0px;
+  max-width: 100%;
+  font-weight: unset;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.minutes-svg svg {
+  display: block;
+  fill: rgb(2, 53, 100);
+  transition: fill 0.2s ease 0s;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media screen and (max-width: 600px) {
+  .button-wrapper {
+    position: fixed;
+    padding: 10px 10px 0px 10px;
+    bottom: 0;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+}

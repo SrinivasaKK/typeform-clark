@@ -1,0 +1,29 @@
+<picture class="email-icon"
+  ><source
+    srcset="/assets/images/default-firstframe.svg"
+    media="(prefers-reduced-motion: reduce)"
+  />
+  <img
+    alt="Favorite Mail"
+    src="/assets/images/default-firstframe.svg"
+    class="email-icon"
+  />
+</picture>
+<div>
+  <div class="button-wrapper">
+    <button tabindex="0" class="button" (click)="emitStartButtonClickEvent()">
+      <span class="flex-wrapper"><span class="text-start">Start</span></span>
+    </button>
+  </div>
+  <div class="press-enter">
+    <span> Press <strong>Enter ↵</strong></span>
+    <span class="minutes-svg">
+      <svg width="12" height="12" viewBox="0 0 12 12">
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12 6C12 2.68629 9.31371 0 6 0C2.68629 0 0 2.68629 0 6C0 9.31371 2.68629 12 6 12C9.31371 12 12 9.31371 12 6ZM5.99033 2.59455C5.93953 2.31465 5.69455 2.1024 5.4 2.1024C5.06863 2.1024 4.8 2.37103 4.8 2.7024V6.6L4.80967 6.70785C4.86047 6.98775 5.10545 7.2 5.4 7.2H7.8L7.90785 7.19033C8.18775 7.13953 8.4 6.89455 8.4 6.6C8.4 6.26863 8.13137 6 7.8 6H6V2.7024L5.99033 2.59455Z"
+        ></path></svg></span
+    ><span> Takes only 2 minutes</span>
+  </div>
+</div>
