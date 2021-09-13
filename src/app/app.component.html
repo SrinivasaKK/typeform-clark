@@ -1,4 +1,4 @@
-<div class="container">
+<div>
   <app-welcome
     *ngIf="!startClicked"
     (clickStart)="showQuestions()"
@@ -10,10 +10,26 @@
       [class.focus]="i == 0"
       [id]="question.identifier"
     >
-      <app-free-text
-        [question]="question"
-        (scrollNext)="gotoNext($event)"
-      ></app-free-text>
+      <div class="inner_wrapper">
+        <label>{{ question.headline }}</label>
+        <div *ngIf="question.question_type == 'multiple-choice'">
+          <app-single-selection
+            [question]="question"
+            *ngIf="question.multiple === 'false'"
+            (scrollNext)="gotoNext($event)"
+          ></app-single-selection>
+          <app-multi-selection
+            [question]="question"
+            *ngIf="question.multiple === 'true'"
+            (scrollNext)="gotoNext($event)"
+          ></app-multi-selection>
+        </div>
+        <app-free-text
+          *ngIf="question.question_type == 'text'"
+          [question]="question"
+          (scrollNext)="gotoNext($event)"
+        ></app-free-text>
+      </div>
     </div>
   </ng-container>
 </div>

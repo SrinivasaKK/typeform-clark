@@ -10,28 +10,13 @@
   scroll-behavior: smooth;
 }
 
-.page_wrapper {
-  transition: 0.2s ease-in-out;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 500px;
-  overflow: hidden;
-  color: #bdbdbd;
-  opacity: 0.5;
-  padding: 0 50px;
-  &.focus {
-    color: #333;
-    opacity: 1;
-  }
-}
-
 .inner_wrapper {
   margin: auto;
   width: 50%;
-  h3 {
-    font-weight: 400;
-    font-size: 26px;
+  label {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
     word-break: break-word;
   }
 }

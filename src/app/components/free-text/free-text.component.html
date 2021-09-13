@@ -1,14 +1,13 @@
-<mat-card class="input-control">
-  <mat-form-field class="pointer" floatLabel="auto">
-    <mat-label>{{ question.headline }}</mat-label>
-    <input
-      type="text"
-      matInput
-      class="typeform_input"
-      [(ngModel)]="answer"
-      ngDefaultControl
-      (keypress)="onPressEnter($event)"
-      autocomplete="off"
-    />
-  </mat-form-field>
-</mat-card>
+<div class="input-control">
+  <input
+    type="text"
+    matInput
+    class="typeform_input"
+    [(ngModel)]="value"
+    ngDefaultControl
+    (keypress)="onPressEnter($event)"
+    autocomplete="off"
+  />
+
+  <app-proceed-button *ngIf="value" (next)="gotoNext()"></app-proceed-button>
+</div>

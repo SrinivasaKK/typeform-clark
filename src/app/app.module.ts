@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
     BrowserAnimationsModule,
     MatInputModule,
     MatCardModule,
+    MatCheckboxModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

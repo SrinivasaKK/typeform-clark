@@ -13,24 +13,17 @@ export class FreeTextComponent implements OnInit {
   @Output()
   scrollNext = new EventEmitter<any>();
 
-  answer = '';
+  value = '';
   constructor() {}
 
   ngOnInit() {}
 
-  /**
-   * On Enter key press
-   * @param event
-   */
   onPressEnter(event) {
     if (event.keyCode == 13) {
       this.gotoNext();
     }
   }
 
-  /**
-   * Go to next
-   */
   gotoNext() {
     this.scrollNext.emit({
       question: this.question,

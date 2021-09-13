@@ -1,10 +1,22 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: "Helvetica Neue", sans-serif;
 }
 
 html {
+  scroll-behavior: smooth;
+}
+
+:host {
+  padding: 0;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  padding-top: 100px;
+  min-height: 300px;
+  width: 100%;
   scroll-behavior: smooth;
 }
 
@@ -14,16 +26,16 @@ html {
   border-bottom: 1px solid lightgrey;
   border-radius: 0;
   outline: none;
-  width: 90%;
+  width: 100%;
   font-size: 20px;
-  margin: 10px;
-  padding: 10px;
+  margin-top: 10px;
+  padding-top: 10px;
   box-shadow: none;
   box-sizing: content-box;
-  transition: all 1s;
+  transition: all 0.5s;
   &:focus {
     width: 100%;
-    border-bottom: 3px solid #52b6ac;
+    border-bottom: 3px solid rgb(2, 53, 100);
   }
 }
 
@@ -125,4 +137,39 @@ body {
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.05);
   }
+}
+
+label {
+  margin: 0px;
+  max-width: 100%;
+  font-weight: unset;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.page_wrapper {
+  transition: 0.2s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+  overflow: hidden;
+  color: #bdbdbd;
+  opacity: 0;
+  padding: 0 50px;
+  &.focus {
+    color: #333;
+    opacity: 1;
+  }
+}
+.mat-checkbox-input {
+  bottom: 0;
+  left: 50%;
+  display: none !important;
+}
+
+.mat-checkbox-checked .mat-checkbox-checkmark-path {
+  stroke-dashoffset: 0;
+  stroke: rgb(2, 53, 100) !important;
+  stroke-width: 4px !important;
 }

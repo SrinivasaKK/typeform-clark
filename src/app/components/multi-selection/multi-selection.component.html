@@ -1,1 +1,17 @@
-<p>multi-selection works!</p>
+<!-- Multiple Input Allowed -->
+<div id="multi-option">
+  <div
+    *ngFor="let choice of question.choices"
+    [class.selected]="selectedOptions.indexOf(choice) !== -1"
+    class="mat-checkbox"
+  >
+    <mat-checkbox (change)="addToSelectedOptions(choice)">
+      {{ choice.value }}
+    </mat-checkbox>
+  </div>
+
+  <app-proceed-button
+    *ngIf="selectedOptions.length > 0"
+    (next)="gotoNext()"
+  ></app-proceed-button>
+</div>
