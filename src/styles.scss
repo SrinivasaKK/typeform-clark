@@ -55,7 +55,9 @@ body {
   width: 150px;
 }
 
-.button-wrapper {
+.start-button-wrapper,
+.survey-button-wrapper,
+.submit-button-wrapper {
   display: flex;
   flex-flow: row wrap;
   position: relative;
@@ -125,11 +127,19 @@ body {
 }
 
 @media screen and (max-width: 600px) {
-  .button-wrapper {
+  .start-button-wrapper,
+  .survey-button-wrapper {
     position: fixed;
     padding: 10px 10px 0px 10px;
     bottom: 0;
     width: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  .submit-button-wrapper {
+    padding: 10px 10px 0px 10px;
     align-items: center;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.05);
