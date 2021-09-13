@@ -33,19 +33,19 @@ export class AppComponent {
   }
 
   nextQuestion(event) {
-    let node = event.destination
+    let element = event.destination
       ? document.getElementById(event.destination)
       : document.getElementById(event.question.identifier);
 
     this.el.nativeElement.scrollTo({
       left: 0,
-      top: event.destination ? node.offsetTop : node.offsetTop + 500,
+      top: event.destination ? element.offsetTop : element.offsetTop + 500,
     });
 
     if (event.destination) {
-      node.querySelector('input').focus();
+      element.querySelector('input').focus();
     } else {
-      node?.nextElementSibling?.querySelector('input').focus();
+      element?.nextElementSibling?.querySelector('input').focus();
       this.end = true;
     }
   }
@@ -54,22 +54,17 @@ export class AppComponent {
     let questions = this.el.nativeElement.querySelectorAll('.main-wrapper');
     //we'll do some stuff here when the window is scrolled
     questions.forEach((question) => {
-      var etop = question.getBoundingClientRect().top;
-      var diff = etop - window.pageYOffset;
+      var elementTop = question.getBoundingClientRect().top;
+      var diff = elementTop - window.pageYOffset;
       if (diff < 300) {
-        this.reinitState(question, questions);
+        this.initiateState(question, questions);
       }
     });
   }
 
-  /**
-   * Re-initiate focus on scroll
-   * @param question
-   * @param elements
-   */
-  reinitState(question, questions) {
-    questions.forEach((elem) => {
-      elem.classList.remove('focus');
+  initiateState(question, questions) {
+    questions.forEach((element: any) => {
+      element.classList.remove('focus');
     });
     question.classList.add('focus');
   }

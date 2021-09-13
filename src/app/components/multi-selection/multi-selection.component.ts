@@ -23,7 +23,7 @@ export class MultiSelectionComponent implements OnInit {
   /**
    * Selected Options
    */
-  selectedOptions: Questions[] = [];
+  selectedOptions = [];
 
   constructor() {}
 
@@ -36,29 +36,16 @@ export class MultiSelectionComponent implements OnInit {
 
   ngOnInit() {}
 
-  /**
-   * Add to list os selected option
-   * @param option
-   */
-  addToSelectedOptions(option) {
-    if (this.selectedOptions.indexOf(option) == -1) {
-      this.selectedOptions.push(option);
+  addToSelectedOptions(option, choice) {
+    if (option.checked) {
+      this.selectedOptions.push(choice.value);
+    } else {
+      this.selectedOptions = this.selectedOptions.filter((item) => {
+        return choice.value !== item;
+      });
     }
   }
 
-  /**
-   * Remove Selected Option
-   * @param option
-   */
-  removeOption(option) {
-    this.selectedOptions = this.selectedOptions.filter((item) => {
-      return option !== item;
-    });
-  }
-
-  /**
-   * Go to next question
-   */
   nextQuestion() {
     this.moveNext.emit({
       question: this.question,

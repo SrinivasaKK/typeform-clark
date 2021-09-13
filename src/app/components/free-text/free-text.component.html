@@ -10,7 +10,7 @@
   />
 
   <app-proceed-button
-    *ngIf="value"
+    *ngIf="(question.required && value !== null) || !question.required"
     (next)="nextQuestion()"
   ></app-proceed-button>
 </div>

@@ -1,4 +1,4 @@
-<div *ngIf="question.multiple === 'false'" id="single-option">
+<div *ngIf="question.multiple === 'false'" id="single-selection">
   <div class="options" *ngFor="let choice of question.choices; let i = index">
     <input
       id="{{ question.identifier }}{{ i }}"
