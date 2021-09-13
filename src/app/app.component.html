@@ -1,9 +1,12 @@
 <div>
   <app-welcome
-    *ngIf="!startClicked"
+    *ngIf="!startClicked && !surveyCompleted"
     (clickStart)="showQuestions()"
   ></app-welcome>
-  <ng-container *ngIf="startClicked" class="animate-questions">
+  <ng-container
+    *ngIf="startClicked && !surveyCompleted"
+    class="animate-questions"
+  >
     <div
       *ngFor="let question of questions; let i = index"
       class="main-wrapper"
@@ -32,4 +35,17 @@
       </div>
     </div>
   </ng-container>
+
+  <div
+    *ngIf="startClicked && !surveyCompleted"
+    class="button-wrapper"
+    (click)="surveyComplete()"
+  >
+    <button tabindex="0" class="button">
+      <span class="flex-wrapper"
+        ><span class="text-start">Submit Survey</span></span
+      >
+    </button>
+  </div>
+  <app-success *ngIf="surveyCompleted"></app-success>
 </div>

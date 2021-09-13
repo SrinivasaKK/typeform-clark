@@ -1,3 +1,4 @@
+@import "./../variables.scss";
 :host {
   padding: 0;
   overflow: auto;
@@ -8,6 +9,22 @@
   min-height: 300px;
   width: 100%;
   scroll-behavior: smooth;
+}
+
+.main-wrapper {
+  transition: 0.2s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+  overflow: hidden;
+  color: $light-grey-shade;
+  opacity: 0;
+  padding: 0 50px;
+  &.focus {
+    color: $dark-charcoal;
+    opacity: 1;
+  }
 }
 
 .question-wrapper {
@@ -28,12 +45,12 @@
 }
 
 .question-wrapper {
-  animation: div 0.5s linear;
+  animation: div 0.2s linear;
 }
 
 @keyframes div {
   0% {
-    transform: translateY(-100%);
+    transform: translateY(100%);
   }
 
   100% {

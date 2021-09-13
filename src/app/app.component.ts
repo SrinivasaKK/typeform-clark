@@ -11,7 +11,8 @@ export class AppComponent {
   title = 'Typeform-clone';
   startClicked = false;
   questions = [];
-  end = false;
+
+  surveyCompleted = false;
   constructor(
     private questionnaireService: QuestionnaireService,
     private el: ElementRef
@@ -46,7 +47,6 @@ export class AppComponent {
       element.querySelector('input').focus();
     } else {
       element?.nextElementSibling?.querySelector('input').focus();
-      this.end = true;
     }
   }
 
@@ -67,5 +67,9 @@ export class AppComponent {
       element.classList.remove('focus');
     });
     question.classList.add('focus');
+  }
+
+  surveyComplete() {
+    this.surveyCompleted = true;
   }
 }

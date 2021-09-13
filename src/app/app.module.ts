@@ -11,6 +11,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { WelcomeComponent } from './components/welcome/welcome.component';
+import { SuccessComponent } from './components/success/success.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +20,7 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
     MultiSelectionComponent,
     ProceedButtonComponent,
     WelcomeComponent,
+    SuccessComponent,
   ],
   imports: [
     BrowserModule,
