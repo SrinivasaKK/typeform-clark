@@ -1,8 +1,11 @@
 <div class="buttons">
   <button class="submit-button" (click)="nextQuestion()">
-    <span class="check-mark">OK</span><i class="check fa fa-check"></i>
-    <span class="saved">Thank you!</span>
+    <span class="check-mark">{{ TEXTS.OK }}</span
+    ><i class="check fa fa-check"></i>
+    <span class="saved">{{ TEXTS.THANK_YOU }}</span>
     <i class="fa fa-circle-thin"></i> <i class="fa fa-check"></i>
   </button>
-  <span class="enter"> Press <strong>Enter ↵</strong></span>
+  <span class="enter">
+    {{ TEXTS.PRESS }} <strong>{{ TEXTS.ENTER }} ↵</strong></span
+  >
 </div>

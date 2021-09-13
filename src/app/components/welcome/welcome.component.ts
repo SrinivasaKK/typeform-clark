@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { STATIC_TEXTS } from './../../constant';
 
 @Component({
   selector: 'app-welcome',
@@ -8,6 +9,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class WelcomeComponent implements OnInit {
   @Output()
   clickStart = new EventEmitter<any>();
+  TEXTS = STATIC_TEXTS;
   constructor() {}
 
   ngOnInit(): void {}

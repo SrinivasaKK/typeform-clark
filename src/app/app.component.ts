@@ -1,4 +1,5 @@
 import { Component, ElementRef } from '@angular/core';
+import { STATIC_TEXTS } from './constant';
 import { Questionnaire } from './models/question.model';
 import { QuestionnaireService } from './services/questionnaire.service';
 
@@ -11,7 +12,7 @@ export class AppComponent {
   title = 'Typeform-clone';
   startClicked = false;
   questions = [];
-
+  TEXTS = STATIC_TEXTS;
   surveyCompleted = false;
   constructor(
     private questionnaireService: QuestionnaireService,

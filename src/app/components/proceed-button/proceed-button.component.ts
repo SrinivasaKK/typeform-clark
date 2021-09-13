@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { STATIC_TEXTS } from './../../constant';
 
 @Component({
   selector: 'app-proceed-button',
@@ -10,6 +11,7 @@ export class ProceedButtonComponent implements OnInit {
   next = new EventEmitter<any>();
 
   classList: any;
+  TEXTS = STATIC_TEXTS;
 
   constructor() {}
 

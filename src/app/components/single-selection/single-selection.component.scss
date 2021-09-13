@@ -2,7 +2,6 @@
 
 input[type="radio"] {
   display: none;
-
   &:checked {
     & + .answer_block {
       background-color: $light-blue;
@@ -13,7 +12,7 @@ input[type="radio"] {
 }
 
 .answer_block {
-  border: 1px solid $light-green;
+  border: 1px solid $dark-green;
   background-color: $light-blue;
   box-shadow: $primary-color-shade 0px 0px 0px 1px inset;
   color: $primary-color;
