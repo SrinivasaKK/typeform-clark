@@ -2,12 +2,15 @@
   <input
     type="text"
     matInput
-    class="typeform_input"
+    class="text-input"
     [(ngModel)]="value"
     ngDefaultControl
     (keypress)="onPressEnter($event)"
     autocomplete="off"
   />
 
-  <app-proceed-button *ngIf="value" (next)="gotoNext()"></app-proceed-button>
+  <app-proceed-button
+    *ngIf="value"
+    (next)="nextQuestion()"
+  ></app-proceed-button>
 </div>

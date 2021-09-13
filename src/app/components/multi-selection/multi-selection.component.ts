@@ -18,7 +18,7 @@ export class MultiSelectionComponent implements OnInit {
   question: Questions;
 
   @Output()
-  scrollNext = new EventEmitter<any>();
+  moveNext = new EventEmitter<any>();
 
   /**
    * Selected Options
@@ -30,7 +30,7 @@ export class MultiSelectionComponent implements OnInit {
   @HostListener('document:keydown', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent): void {
     if (event.keyCode === 13) {
-      this.gotoNext();
+      this.nextQuestion();
     }
   }
 
@@ -59,8 +59,8 @@ export class MultiSelectionComponent implements OnInit {
   /**
    * Go to next question
    */
-  gotoNext() {
-    this.scrollNext.emit({
+  nextQuestion() {
+    this.moveNext.emit({
       question: this.question,
       destination: '',
     });

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-proceed-button',
@@ -8,12 +8,13 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class ProceedButtonComponent implements OnInit {
   @Output()
   next = new EventEmitter<any>();
+
   classList: any;
 
   constructor() {}
 
   ngOnInit() {
-    const cartButtons = document.querySelectorAll('.cart-button');
+    const cartButtons = document.querySelectorAll('.submit-button');
 
     cartButtons.forEach((button) => {
       button.addEventListener('click', this.cartClick);
@@ -25,7 +26,7 @@ export class ProceedButtonComponent implements OnInit {
     button.classList.add('clicked');
   }
 
-  gotoNext() {
+  nextQuestion() {
     setTimeout(() => {
       this.next.emit();
     }, 2000);

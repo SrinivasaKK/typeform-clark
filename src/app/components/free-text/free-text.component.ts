@@ -4,14 +4,14 @@ import { Questions } from './../../models/question.model';
 @Component({
   selector: 'app-free-text',
   templateUrl: './free-text.component.html',
-  styleUrls: ['./free-text.component.css'],
+  styleUrls: ['./free-text.component.scss'],
 })
 export class FreeTextComponent implements OnInit {
   @Input()
   question: Questions;
 
   @Output()
-  scrollNext = new EventEmitter<any>();
+  moveNext = new EventEmitter<any>();
 
   value = '';
   constructor() {}
@@ -20,12 +20,12 @@ export class FreeTextComponent implements OnInit {
 
   onPressEnter(event) {
     if (event.keyCode == 13) {
-      this.gotoNext();
+      this.nextQuestion();
     }
   }
 
-  gotoNext() {
-    this.scrollNext.emit({
+  nextQuestion() {
+    this.moveNext.emit({
       question: this.question,
       destination: '',
     });

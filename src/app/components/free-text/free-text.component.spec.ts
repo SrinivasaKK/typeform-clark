@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
 
 import { FreeTextComponent } from './free-text.component';
 
@@ -8,9 +9,9 @@ describe('FreeTextComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FreeTextComponent ]
-    })
-    .compileComponents();
+      declarations: [FreeTextComponent],
+      providers: [FormsModule],
+    }).compileComponents();
   });
 
   beforeEach(() => {

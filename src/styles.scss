@@ -1,8 +1,5 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Helvetica Neue", sans-serif;
-}
+@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap");
+@import "./variables.scss";
 
 html {
   scroll-behavior: smooth;
@@ -20,10 +17,10 @@ html {
   scroll-behavior: smooth;
 }
 
-.typeform_input {
+.text-input {
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid lightgrey;
+  border-bottom: 1px solid $light-grey;
   border-radius: 0;
   outline: none;
   width: 100%;
@@ -35,7 +32,7 @@ html {
   transition: all 0.5s;
   &:focus {
     width: 100%;
-    border-bottom: 3px solid rgb(2, 53, 100);
+    border-bottom: 3px solid $primary-color;
   }
 }
 
@@ -45,7 +42,7 @@ body {
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: "Prompt", sans-serif;
   background-image: url("./assets/images/background-image.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -79,16 +76,16 @@ body {
   outline: none;
   border: 1px solid transparent;
   margin: 0px;
-  box-shadow: rgb(0 0 0 / 10%) 0px 3px 12px 0px;
+
   padding: 10px 20px;
   min-height: 48px;
-  background-color: rgb(2, 53, 100);
-  color: rgb(230, 243, 255);
+  background-color: $primary-color;
+  color: $light-blue-shade;
   border-radius: 4px;
 }
 
 .button:hover {
-  background-color: rgb(2, 53, 100);
+  background-color: $primary-color;
   opacity: 0.7;
 }
 
@@ -117,7 +114,7 @@ body {
 
 .minutes-svg svg {
   display: block;
-  fill: rgb(2, 53, 100);
+  fill: $primary-color;
   transition: fill 0.2s ease 0s;
 }
 
@@ -147,18 +144,18 @@ label {
   line-height: 32px;
 }
 
-.page_wrapper {
+.main-wrapper {
   transition: 0.2s ease-in-out;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 500px;
   overflow: hidden;
-  color: #bdbdbd;
+  color: $light-grey-shade;
   opacity: 0;
   padding: 0 50px;
   &.focus {
-    color: #333;
+    color: $dark-charcoal;
     opacity: 1;
   }
 }
@@ -170,6 +167,16 @@ label {
 
 .mat-checkbox-checked .mat-checkbox-checkmark-path {
   stroke-dashoffset: 0;
-  stroke: rgb(2, 53, 100) !important;
+  stroke: $primary-color !important;
   stroke-width: 4px !important;
+}
+
+.mat-checkbox-label {
+  font-size: 20px;
+}
+
+@media screen and (max-width: 400px) {
+  .mat-checkbox-label {
+    font-size: 16px;
+  }
 }

@@ -11,6 +11,7 @@ export class AppComponent {
   title = 'Typeform-clone';
   startClicked = false;
   questions = [];
+  end = false;
   constructor(
     private questionnaireService: QuestionnaireService,
     private el: ElementRef
@@ -31,7 +32,7 @@ export class AppComponent {
     });
   }
 
-  gotoNext(event) {
+  nextQuestion(event) {
     let node = event.destination
       ? document.getElementById(event.destination)
       : document.getElementById(event.question.identifier);
@@ -45,11 +46,12 @@ export class AppComponent {
       node.querySelector('input').focus();
     } else {
       node?.nextElementSibling?.querySelector('input').focus();
+      this.end = true;
     }
   }
 
   onScroll() {
-    let questions = this.el.nativeElement.querySelectorAll('.page_wrapper');
+    let questions = this.el.nativeElement.querySelectorAll('.main-wrapper');
     //we'll do some stuff here when the window is scrolled
     questions.forEach((question) => {
       var etop = question.getBoundingClientRect().top;

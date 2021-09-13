@@ -10,9 +10,9 @@
   scroll-behavior: smooth;
 }
 
-.inner_wrapper {
+.question-wrapper {
   margin: auto;
-  width: 50%;
+  width: 50vw;
   label {
     font-weight: 500;
     font-size: 24px;
@@ -22,7 +22,21 @@
 }
 
 @media (max-width: 600px) {
-  .inner_wrapper {
+  .question-wrapper {
     width: 95%;
+  }
+}
+
+.question-wrapper {
+  animation: div 0.5s linear;
+}
+
+@keyframes div {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0);
   }
 }

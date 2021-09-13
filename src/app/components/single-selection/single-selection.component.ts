@@ -11,7 +11,7 @@ export class SingleSelectionComponent implements OnInit {
   question: Questions;
 
   @Output()
-  scrollNext = new EventEmitter<any>();
+  moveNext = new EventEmitter<any>();
 
   /**
    * Selected Option
@@ -25,7 +25,7 @@ export class SingleSelectionComponent implements OnInit {
   /**
    * Go to next Question
    */
-  gotoNext() {
+  nextQuestion() {
     const jumps = this.question.jumps;
     let destination;
 
@@ -36,7 +36,7 @@ export class SingleSelectionComponent implements OnInit {
         }
       });
     }
-    this.scrollNext.emit({
+    this.moveNext.emit({
       question: this.question,
       destination: destination || '',
     });

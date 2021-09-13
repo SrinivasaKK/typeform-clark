@@ -3,31 +3,31 @@
     *ngIf="!startClicked"
     (clickStart)="showQuestions()"
   ></app-welcome>
-  <ng-container *ngIf="startClicked">
+  <ng-container *ngIf="startClicked" class="animate-questions">
     <div
       *ngFor="let question of questions; let i = index"
-      class="page_wrapper"
+      class="main-wrapper"
       [class.focus]="i == 0"
       [id]="question.identifier"
     >
-      <div class="inner_wrapper">
+      <div class="question-wrapper">
         <label>{{ question.headline }}</label>
         <div *ngIf="question.question_type == 'multiple-choice'">
           <app-single-selection
             [question]="question"
             *ngIf="question.multiple === 'false'"
-            (scrollNext)="gotoNext($event)"
+            (moveNext)="nextQuestion($event)"
           ></app-single-selection>
           <app-multi-selection
             [question]="question"
             *ngIf="question.multiple === 'true'"
-            (scrollNext)="gotoNext($event)"
+            (moveNext)="nextQuestion($event)"
           ></app-multi-selection>
         </div>
         <app-free-text
           *ngIf="question.question_type == 'text'"
           [question]="question"
-          (scrollNext)="gotoNext($event)"
+          (moveNext)="nextQuestion($event)"
         ></app-free-text>
       </div>
     </div>
